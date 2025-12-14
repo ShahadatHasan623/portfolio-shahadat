@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #000000;
+  position: relative;
+}
+
+/* Pattern Layer */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.03) 0,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  animation: movePattern 25s linear infinite;
+  pointer-events: none;
+}
+
+/* Soft Glow Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center,
+    rgba(255,255,255,0.05),
+    transparent 70%);
+  animation: pulseGlow 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Pattern Animation */
+@keyframes movePattern {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 300px 300px;
+  }
+}
+
+/* Glow Animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+:root {
+  --bg-main: #020617;
+  --bg-glass: rgba(2, 6, 23, 0.6);
+
+  --blue-main: #3b82f6;
+  --blue-soft: #60a5fa;
+
+  --text-main: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+
+  --border-blue: rgba(59, 130, 246, 0.2);
+}
+
+/* =========================
+   ANIMATED GLOW BORDER
+========================= */
+
+.animated-border {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* moving gradient border */
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    var(--blue-main),
+    var(--blue-soft),
+    transparent
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  animation: border-move 4s linear infinite;
+}
+
+@keyframes border-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* glow effect */
+.animated-border::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.45);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+
+.font{
+  font-family: inherit;
+}
