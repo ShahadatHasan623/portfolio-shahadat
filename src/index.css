@@ -121,7 +121,7 @@ body::after {
   content: "";
   position: absolute;
   inset: 0;
-  padding: 1.5px;
+  padding: 2px;
   border-radius: inherit;
 
   background: linear-gradient(
@@ -161,9 +161,8 @@ body::after {
   pointer-events: none;
 }
 
-
-.font{
-  font-family: inherit;
+.animated-border:hover::after {
+  box-shadow: 0 0 45px rgba(96, 165, 250, 0.75);
 }
 
 /* ===============================

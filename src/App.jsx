@@ -1,5 +1,6 @@
 import { useState } from "react";
 import profileImage from "./assets/shahadat.jpg";
+import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -8,8 +9,8 @@ export default function App() {
     <div className="grid  lg:grid-cols-12 gap-6 max-w-7xl mx-auto relative">
       {/* LEFT SIDEBAR */}
       <div className="lg:col-span-4 col-span-12 animated-border h-screen lg:sticky top-0 bg-[#1a1a1a]/90 backdrop-blur-3xl shadow-lg shadow-blue-500/90 relative overflow-hidden fade-sides lg:mx-0 mx-5">
-        <div className="montserrat-font flex flex-col justify-center items-center space-y-8 ">
-          <div className="flex items-center gap-2 bg-[#121212] px-8  my-5 rounded-full border-2 border-[#333333]">
+        <div className="montserrat-font flex flex-col justify-center items-center space-y-6 py-8 ">
+          <div className="flex items-center gap-2 bg-[#121212] px-8 rounded-full border-2 border-[#333333]">
             <div className=" w-4 h-4 bg-amber-700 rounded-full my-5"></div>
             <h1 className="text-[#858585] text-xl">
               Avaiable{" "}
@@ -19,7 +20,7 @@ export default function App() {
             </h1>
           </div>
 
-          <div className="relative w-60 h-70 mx-auto profile-frame mt-5">
+          <div className="relative w-60 h-61 mx-auto profile-frame">
             <img
               src={profileImage}
               alt="Profile"
@@ -31,8 +32,33 @@ export default function App() {
             </div>
           </div>
           <div>
-            <h3 className="text-[#858585] text-center font-semibold text-xl mt-5">shahadathasan743599@gmail.com</h3>
-            <p className="text-center space-y-2 text-[#4a4a4a]">Based in Barisal,Bangladesh</p>
+            <h3 className="text-[var(--text-secondary)] text-center font-semibold text-xl mt-5">
+              shahadathasan743599@gmail.com
+            </h3>
+            <p className="text-center space-y-2 text-[var(--text-muted)]">
+              Based in Barisal,Bangladesh
+            </p>
+          </div>
+
+          <div className="flex gap-5 items-center">
+            <a
+              href="#"
+              className="w-15 h-15 rounded-full bg-[#303030]/90 backdrop-blur-3xl text-[var(--text-main)] flex items-center justify-center shadow-md hover:bg-white hover:text-black hover:scale-110 hover:shadow-lg transition-all duration-300"
+            >
+              <FaFacebook size={25} />
+            </a>
+            <a
+              href="#"
+              className="w-15 h-15 rounded-full bg-[#303030]/90 backdrop-blur-3xl text-[var(--text-main)] flex items-center justify-center shadow-md hover:bg-white hover:text-black hover:scale-110 hover:shadow-lg transition-all duration-300"
+            >
+              <FaTwitter size={25} />
+            </a>
+            <a
+              href="#"
+              className="w-15 h-15 rounded-full bg-[#303030]/90 backdrop-blur-3xl text-[var(--text-main)] flex items-center justify-center shadow-md hover:bg-white hover:text-black hover:scale-110 hover:shadow-lg transition-all duration-300"
+            >
+              <FaLinkedin size={25} />
+            </a>
           </div>
         </div>
       </div>
