@@ -1,5 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rajdhani:wght@300;400;500;600;700&family=Sacramento&display=swap');
 @import "tailwindcss";
+
+.inter-font {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.montserrat-font {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.playfair-display-font {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+}
+
+.cedarville-cursive-regular {
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rajdhani-regular {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sacramento-regular {
+  font-family: "Sacramento", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -76,7 +112,7 @@ body::after {
 
 .animated-border {
   position: relative;
-  border-radius: 24px;
+  border-radius: 35px;
   overflow: hidden;
 }
 
@@ -128,4 +164,63 @@ body::after {
 
 .font{
   font-family: inherit;
+}
+
+/* ===============================
+   PROFILE IMAGE PREMIUM DESIGN
+================================ */
+
+.profile-frame {
+  border-radius: 16px;
+  padding: 4px;
+}
+
+/* animated glowing border */
+.profile-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+
+  background: conic-gradient(
+    from 0deg,
+    var(--blue-main),
+    var(--blue-soft),
+    var(--blue-main),
+    var(--blue-soft),
+    var(--blue-main)
+  );
+
+  animation: profile-spin 6s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+/* soft glow */
+.profile-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(59,130,246,0.6);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* animation */
+@keyframes profile-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* hover boost */
+.profile-frame:hover::after {
+  box-shadow: 0 0 45px rgba(96,165,250,0.85);
 }
