@@ -17,8 +17,8 @@ const Introduction = () => {
     },
   ];
   return (
-    <div>
-      <div className="flex items-center gap-2 bg-[#121212] px-5 rounded-full border-2 border-[#333333] w-max  text-2xl py-2 rajdhani-regular mt-10 lg:mt-0 lg:mx-0 mx-auto">
+    <div id="Introduction">
+      <div className="flex items-center gap-2 bg-[#121212] px-5 rounded-full border-2 border-[#333333] w-max  text-2xl py-2 rajdhani-regular mt-10 lg:mt-10 lg:mx-0 mx-auto">
         <h1 className="text-[var(--text-secondary)] font-semibold uppercase text-xl flex items-center gap-2">
           <span>
             <CiHome size={25} />
