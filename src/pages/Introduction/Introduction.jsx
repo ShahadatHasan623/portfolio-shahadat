@@ -1,0 +1,76 @@
+import { CiHome } from "react-icons/ci";
+import Typewriter from "typewriter-effect";
+const Introduction = () => {
+  const logos = [
+    {
+      name: "mongodb",
+      src: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
+    },
+    {
+      name: "express",
+      src: "https://www.vectorlogo.zone/logos/expressjs/expressjs-ar21~bgwhite.svg",
+    },
+    { name: "react", src: "https://cdn.worldvectorlogo.com/logos/react-2.svg" },
+    {
+      name: "node",
+      src: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
+    },
+  ];
+  return (
+    <div>
+      <div className="flex items-center gap-2 bg-[#121212] px-5 rounded-full border-2 border-[#333333] w-max  text-2xl py-2 rajdhani-regular mt-10 lg:mt-0 lg:mx-0 mx-auto">
+        <h1 className="text-[var(--text-secondary)] font-semibold uppercase text-xl flex items-center gap-2">
+          <span>
+            <CiHome size={25} />
+          </span>{" "}
+          Introduction
+        </h1>
+      </div>
+      <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-center justify-between mt-10 content-center px-4">
+        {/* Text Content */}
+        <div className="space-y-2 text-center lg:text-left w-full lg:w-1/2">
+          <h1 className="text-3xl md:text-4xl font-bold text-[var(--text-main)] uppercase">
+            Hi, I'm Shahadat
+          </h1>
+
+          <h1 className="flex flex-wrap justify-center lg:justify-start items-center gap-2 text-xl md:text-2xl font-semibold uppercase">
+            <span className="text-[var(--text-secondary)]">And I'm</span>
+            <span className="text-[var(--blue-main)] drop-shadow-md">
+              <Typewriter
+                options={{
+                  strings: [
+                    "Software Developer",
+                    "Web Developer",
+                    "React Developer",
+                    "Frontend Developer",
+                    "Full Stack Developer",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </span>
+          </h1>
+
+          <p className="text-[var(--text-secondary)] max-w-xl mx-auto lg:mx-0 text-center lg:text-justify text-sm md:text-base">
+            A MERN Stack Developer passionate about building responsive and
+            user-friendly web applications. I enjoy working with React, Node.js,
+            and MongoDB to create full-stack solutions.
+          </p>
+        </div>
+
+        {/* Animation Container */}
+        <div className="animation-container flex justify-center items-center w-full lg:w-1/2">
+          <div className="main-circle">
+            {logos.map((logo, index) => (
+              <div key={index} className={`logo-item ${logo.name}`}>
+                <img src={logo.src} alt={logo.name} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default Introduction;

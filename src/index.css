@@ -16,7 +16,7 @@
   font-optical-sizing: auto;
 }
 
-.cedarville-cursive-regular {
+.cedarville{
   font-family: "Cedarville Cursive", cursive;
   font-weight: 400;
   font-style: normal;
@@ -33,15 +33,17 @@
   font-weight: 400;
   font-style: normal;
 }
-
+h1, h2, h3 {
+  font-family: "Rajdhani", sans-serif;
+}
 
 
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
   background: #000000;
   position: relative;
+  font-family: "Inter", sans-serif;
 }
 
 /* Pattern Layer */
@@ -111,7 +113,6 @@ body::after {
 ========================= */
 
 .animated-border {
-  position: relative;
   border-radius: 35px;
 }
 
@@ -237,4 +238,110 @@ body::after {
 /* hover boost */
 .profile-frame:hover::after {
   box-shadow: 0 0 45px rgba(96,165,250,0.85);
+}
+
+
+:root {
+  --bg-main: #020617;
+  --bg-glass: rgba(2, 6, 23, 0.6);
+  --blue-main: #3b82f6;
+  --blue-soft: #60a5fa;
+  --text-main: #e5e7eb;
+  --border-blue: rgba(59, 130, 246, 0.2);
+}
+
+.animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  /* background: var(--bg-main); Background set kora holo */
+}
+
+.main-circle {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-blue);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+  animation: rotateCircle 20s linear infinite;
+}
+
+/* Glow effect */
+.main-circle::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--blue-soft), transparent 70%);
+  filter: blur(25px);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.center-text {
+  font-family: 'Arial', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--blue-soft); /* Variable used */
+  animation: counterRotate 20s linear infinite;
+}
+
+.logo-item {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: var(--bg-glass); /* Dark premium look */
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-blue);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+  animation: counterRotate 20s linear infinite;
+}
+
+.logo-item img {
+  width: 80%;
+  filter: brightness(0.9);
+}
+
+.logo-item:hover {
+  transform: scale(1.2) !important; /* Scale up on hover */
+  border-color: var(--blue-main);
+  box-shadow: 0 0 20px var(--blue-soft);
+}
+
+/* Positioning */
+.mongodb { top: -30px; left: calc(50% - 30px); }
+.express { right: -30px; top: calc(50% - 30px); }
+.react { bottom: -30px; left: calc(50% - 30px); }
+.node { left: -30px; top: calc(50% - 30px); }
+.node { left: -30px; top: calc(50% - 30px); }
+.node { left: -30px; top: calc(50% - 30px); }
+
+/* Animations Keyframes */
+@keyframes rotateCircle {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counterRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Pause on Hover */
+.main-circle:hover, 
+.main-circle:hover .logo-item, 
+.main-circle:hover .center-text {
+  animation-play-state: paused;
 }

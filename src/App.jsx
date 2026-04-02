@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div className="grid  lg:grid-cols-12 gap-6 max-w-7xl mx-auto relative">
       {/* LEFT SIDEBAR */}
-      <div className="lg:col-span-4 col-span-12 animated-border h-screen lg:sticky top-0 bg-[#1a1a1a]/90 backdrop-blur-3xl shadow-lg shadow-blue-500/90 relative fade-sides lg:mx-0 mx-5">
+      <div className="lg:col-span-4 col-span-12 animated-border lg:h-screen lg:sticky top-0 bg-[#1a1a1a]/90 backdrop-blur-3xl shadow-lg shadow-blue-500/90 relative fade-sides lg:mx-0 mx-5">
         <div className="montserrat-font flex flex-col justify-center items-center space-y-6 py-5 ">
           <div className="flex items-center gap-2 bg-[#121212] px-8 rounded-full border-2 border-[#333333]">
             <div className=" w-4 h-4 bg-amber-700 rounded-full my-5"></div>
@@ -69,17 +69,17 @@ export default function App() {
             <a
               href="#"
               target="_blank"
-              className="px-4 py-2 flex items-center bg-[#121212] border-2 border-[#333333] rounded-full text-[var(--text-main)] font-semibold text-xl  hover:text-amber-600 inline-flex text-xl"
+              className="px-4 py-2 flex items-center bg-[#121212] border-2 border-[#333333] rounded-full text-[var(--text-main)] font-semibold text-2xl  inline-flex inter-font transition-all duration-300 hover:bg-white hover:text-black hover:scale-105"
             >
               Get Started{" "}
-              <MdArrowOutward className="ml-12 flex items-center justify-center w-10  h-10 rounded-full bg-[var(--text-main)] text-black z-100" />
+              <MdArrowOutward className="ml-5 flex items-center justify-center w-10  h-10 rounded-full z-100" />
             </a>
           </div>
         </div>
       </div>
 
       {/* MIDDLE CONTENT */}
-      <div className="lg:col-span-7 col-span-12 border-red-500 border-4 p-4">
+      <div className="lg:col-span-7 col-span-12 mt-5">
         <Outlet></Outlet>
       </div>
 
