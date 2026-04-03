@@ -1,5 +1,5 @@
 import { CiHome } from "react-icons/ci";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { BiDownArrowAlt } from "react-icons/bi";
 const Introduction = () => {
@@ -20,10 +20,10 @@ const Introduction = () => {
   ];
   return (
     <div id="Introduction">
-      <div className="flex items-center gap-2 bg-[#121212] px-5 rounded-full border-2 border-[#333333] w-max  text-2xl py-2 rajdhani-regular mt-10 lg:mt-10 lg:mx-0 mx-auto">
+      <div className="flex items-center gap-2 bg-[#121212] px-5 rounded-full border-2 border-[#333333] w-max  text-2xl py-2 rajdhani-regular mt-10 mb-5 lg:mt-10 lg:mx-5 mx-auto">
         <h1 className="text-[var(--text-secondary)] font-semibold uppercase text-xl flex items-center gap-2">
           <span>
-            <CiHome size={25} />
+            <CiHome className="text-[var(--text-main)]" size={25} />
           </span>{" "}
           Introduction
         </h1>
@@ -72,12 +72,12 @@ const Introduction = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-end m-0">
+      <div className="flex justify-end m-0 p-4">
         <a
-          href="#projects" 
-          className="relative flex items-center justify-center w-40 h-40 group"
+          href="#projects"
+          className="relative flex items-center justify-center w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 group transition-transform duration-300 active:scale-95"
         >
-         
+          {/* Rotating Text Container */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -92,7 +92,7 @@ const Introduction = () => {
               </defs>
               <text
                 fill="currentColor"
-                className="text-[11px] font-bold tracking-[2px] uppercase text-[var(--text-secondary)]"
+                className="text-[11px] font-bold tracking-[2.5px] uppercase fill-[var(--text-secondary)]"
               >
                 <textPath xlinkHref="#circlePath">
                   My Projects • My Projects •
@@ -100,8 +100,10 @@ const Introduction = () => {
               </text>
             </svg>
           </motion.div>
-          <div className="relative flex items-center justify-center ">
-           <BiDownArrowAlt className="text-[var(--text-main)]" size={50} />
+
+          {/* Center Icon */}
+          <div className="relative flex items-center justify-center">
+            <BiDownArrowAlt className="text-[var(--text-main)] w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 transition-all" />
           </div>
         </a>
       </div>
