@@ -1,10 +1,11 @@
 import { useState } from "react";
 import profileImage from "./assets/shahadat.jpg";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { MdArrowOutward } from "react-icons/md";
+import { MdArrowOutward, MdDesignServices } from "react-icons/md";
 import { Outlet } from "react-router";
 import { CiHome, CiMail, CiUser } from "react-icons/ci";
 import { Tooltip } from "react-tooltip";
+import { GiSkills } from "react-icons/gi";
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -13,6 +14,8 @@ export default function App() {
   const navItems = [
     { id: "#Introduction", icon: <CiHome size={30} />, label: "Home" },
     { id: "#About", icon: <CiUser size={30} />, label: "About" },
+    { id: "#Services", icon: <MdDesignServices size={30} />, label: "Services" },
+    { id: "#Skills", icon: <GiSkills size={30} />, label: "Skills" },
     { id: "#Contact", icon: <CiMail size={30} />, label: "Contact" },
   ];
 
@@ -95,9 +98,9 @@ export default function App() {
       {/* RIGHT SIDEBAR (Desktop Fixed) */}
       <div className="lg:col-span-1 hidden lg:flex items-center justify-center lg:sticky top-0 h-screen">
         {/* Glassmorphism Sidebar Card */}
-        <div className="w-20 py-8 bg-[var(--bg-glass)] backdrop-blur-md border border-[var(--border-blue)] rounded-full shadow-2xl flex flex-col items-center">
+        <div className="w-15 py-5 bg-[var(--bg-glass)] backdrop-blur-md border border-[var(--border-blue)] rounded-full shadow-2xl flex flex-col items-center">
           {/* Navigation Links */}
-          <ul className="flex flex-col gap-6 items-center">
+          <ul className="flex flex-col gap-2 items-center">
             {navItems.map((item) => {
   
               const isActive = activeNav === item.id;
@@ -109,7 +112,7 @@ export default function App() {
                   data-tooltip-id="my-tooltip"
                   data-tooltip-content={item.label}
                   data-tooltip-place="left"
-                  className={`p-3 rounded-full transition-all duration-300 cursor-pointer 
+                  className={`p-2 rounded-full transition-all duration-300 cursor-pointer 
               ${
                 isActive
                   ? "bg-[var(--blue-main)] text-white shadow-[0_0_15px_var(--blue-main)]" // Active Style
@@ -120,7 +123,6 @@ export default function App() {
                 </li>
               );
             })}
-            {/* Tooltip ekbar rakha-i jotheshto loop-er baire */}
             <Tooltip id="my-tooltip" />
           </ul>
         </div>

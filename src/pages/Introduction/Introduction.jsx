@@ -1,5 +1,7 @@
 import { CiHome } from "react-icons/ci";
+import { motion } from 'framer-motion';
 import Typewriter from "typewriter-effect";
+import { BiDownArrowAlt } from "react-icons/bi";
 const Introduction = () => {
   const logos = [
     {
@@ -26,7 +28,7 @@ const Introduction = () => {
           Introduction
         </h1>
       </div>
-      <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-center justify-between mt-10 content-center px-4">
+      <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-center justify-between content-center px-4">
         {/* Text Content */}
         <div className="space-y-2 text-center lg:text-left w-full lg:w-1/2">
           <h1 className="text-3xl md:text-4xl font-bold text-[var(--text-main)] uppercase">
@@ -69,6 +71,39 @@ const Introduction = () => {
             ))}
           </div>
         </div>
+      </div>
+      <div className="flex justify-end m-0">
+        <a
+          href="#projects" 
+          className="relative flex items-center justify-center w-40 h-40 group"
+        >
+         
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            className="absolute w-full h-full border-2 border-[var(--text-secondary)] rounded-full flex items-center justify-center"
+          >
+            <svg viewBox="0 0 100 100" className="w-full h-full">
+              <defs>
+                <path
+                  id="circlePath"
+                  d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                />
+              </defs>
+              <text
+                fill="currentColor"
+                className="text-[11px] font-bold tracking-[2px] uppercase text-[var(--text-secondary)]"
+              >
+                <textPath xlinkHref="#circlePath">
+                  My Projects • My Projects •
+                </textPath>
+              </text>
+            </svg>
+          </motion.div>
+          <div className="relative flex items-center justify-center ">
+           <BiDownArrowAlt className="text-[var(--text-main)]" size={50} />
+          </div>
+        </a>
       </div>
     </div>
   );
